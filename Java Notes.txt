@@ -1,0 +1,175 @@
+Java: 
+
+1. Identifier: 
+
+ a name in java program is called identifier. which can used for identification purpose. It can be method name or variable name or class name or lable name
+ example: 
+ class test--1
+ { 
+   public static void main--2 ( string--3[]args--4) 
+   { 
+      int x--5=10;
+	}
+  }
+      
+Rules for defining java identifiers:
+1. atoz AtoZ 0-9 $ _--allowed characters , if we are using any other characters , will get compile time error
+
+ex: total_number --allowed,  total# --not allowed
+2. Identifiers can't start with digit.
+ex: total123 - allowed , 123total--not allowed
+
+3. Java identifiers are case sensitive, of course java language itself treated as case sensitive programming language. 
+
+  class test 
+  {  
+      int number=10;
+	  int Number=10;  --we can differntiate with case. 
+	  int NUMBER=10;
+	  
+	 }
+
+4. There is no length limit for  java identifier. But it's not recommended to take too lengthy identifiers. 
+5. we can't use reserved words as identifiers. 
+ex: int x=10;--valid
+    int if =20; -- invalid.
+6. All predefined java class names and interface names we can use as identifiers. Eventhougg if it's valid But it's not recommended , it reduces readablity and creates confusion. 	
+   ex: class test                              
+      { 
+	    public static void  main(string[] args)
+		 {
+		   int String = 10;
+		   s.o.println(String);
+		   }
+		   }
+		   class test 
+      { 
+	    public static void  main(string[] args)
+		 {
+		   int Runnable = 10;
+		   s.o.println(Runnable);
+		   }
+		   }
+ex: 
+total_number--valid
+Integer  --valid
+Int --valid
+int --not valid , why bcoz it's a reserved word 
+
+Reserverd words: 
+
+1. 53 reserved words are there.
+
+  Keywords = 50 - 
+    used key words = 48 -  if , else, else if ..etc
+	unused key word =2 - goto,const
+  Literals = 3 -  true, false, null
+  
+  Diff: If reserved words represents functionality i.e keyword and If reserved words represents value i.e Literal
+  
+ Data types: =8
+ byte, short,int,long,double,float,boolean, char 
+ 
+ Key words for flow control: =11
+ if, else , switch, case, default,do, while, for, break, continue , return 
+ 
+ Key words for modifiers: =11
+ public, private, protected,static,final,abstract, synchronized, naive, strictfp(1.2v), transient, volatile
+ 
+ Keywords exception handling: =6
+ try , catch ,  finally, throw, throws , assert(1.4v)	
+ 
+ Class related Key words: =6
+ class, interface, extends, implements, package, import
+ 
+ Object related key words:=4
+ new, instanceof, super,this
+ 
+ Void retrun type key word : 
+ In Java return type is mandatory , if method won't return anything then we have to declare method with void return type. 
+ But in c language return type is optional and default return type is int. 
+ 
+ Unused Keywords: 
+ 1. goto = usage of goto create several in old lanaguages. and hence sun people banned this keyword in Java. 
+ 2. const=  use final instead of const. 
+ Note: goto and const are unused keywords and if we are trying to use we will get compile time error. 
+ 
+ Reserved Literals: 
+ true, false = values for boolean data type.
+ null= default value for object reference. 
+ 
+ ENUM Key word:
+ enum(1.5v) - we can use enum to define a group of named constants. 
+ ex: 
+ enum month
+ {
+	 JAN,FEB...DEC
+ }
+ enum BEER
+ {
+	 KF, KO,RC,FO 	
+ }
+ 
+Conclusion: 
+ 1. all 53 reserved words in java , contains only lower case alphabets symobols. 
+ 2. In java we have only new key word and there is no delete key word in Java, bcoz distraction of useless object is the responsbility of garbage collector. 
+ 3. The following are new keywords in Java. 
+    strictfp, assert, enum 
+ 
+ 
+Question: 
+which of the following list contains only java reserved words.
+
+goto,delete,
+new,constant,
+break, continue, return,exit,
+final,finally,finalize,
+throw, throws,thrown, 
+notify,notifyAll,
+implements,extends,imports,
+sizeof, instanceof,	
+byte, short,Int
+none of the above  -- correct answer. 
+2. which of the following are java reserved words. 
+
+public
+static
+void
+main 
+string
+args
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

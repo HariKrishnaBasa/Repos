@@ -1,0 +1,212 @@
+Data types: 
+
+In java , every variable and every expression has some type.
+each and every data type is clearly defined. 
+every assignment should be checked by complier for type compatibility.
+because of above reasons we can conclude, java language is strongly typed programming language. 
+
+
+
+Java is not considerd as pure object oriented programming language bcoz serveral oops features not satisfied by java.
+(like operator overloading and multiple inheritence).
+moreover we are depending primitive data types which are non objects. 
+
+Primitive Data types:
+
+1. numeric data types: 
+     integral data type : byte,short,int,long
+	 float point data types:float, double
+2. non numeric data types: char, Boolean
+
+Except boolean and char, remaining data types are considered as signed data types.bcoz we can both the +ve and -ve numbers.
+
+byte: 
+1 byte = 8 bits  0 +ve , 1 -ve  it will store 2's complement. so -128 
+
+    12345678
+	 2 power 
+	 
+	 msb = most signficant bit
+	 +ve number represents in directly in memory
+max_value=127
+min value = -128 
+
+range = -128 to 127
+ex: byte b=127 correct
+    byte b=128 loss of precision found int required byte
+	byte b=10.5 loss of precision found float required byte
+	byte b=true  incompatible data type found boolean required byte
+	byte b = "Hari" Incompatible data type found java.lang.string required byte.
+
+best use case:
+byte is the best choice if you want to handle data interms of streams either from the file and from the network. (file supported or network supported form is byte)
+
+SHort: 
+
+This is the most rarely used data type in java.
+
+size = 2 bytes (16 bits)
+
+range -32768 to 32767
+
+examples same as byte data type.
+
+INT: 
+
+The most commonly data type is int
+
+size 4 bytes(32 bit)
+range -2 31 to 2 31 -1
+value: -2147483648 to 2147483647
+
+ex: int x=2146473647 correct 
+    int x=2146473648 integer is too long
+	int x=2146473648L loss of precision found long required int
+	int x= true incompatible data type found boolean required int
+	
+LONG: 
+
+some times int may not enough to hold big values, then we should go for long type 
+ex: 1. amount of distance travelled by light in 1000 days , to hold this value 
+    int may  not enough we should go for long data type. 
+
+  ex: 
+   long l=126000*60*60*24*1000  
+   ex: 
+   the number of characters present in big file may exceed int range, hence the return type of length method is long but not the int 
+   size : 8 bytes (64 bits) range -2 63 to 2 63 -1 
+   
+FLoat vs double: 
+
+if you want 5 to 6 decimal accuracy will go for float , if you want 14 to 15 decimal accuracy will go for double
+float follow single precision and double follow double precision.
+float 4 bytes and double 8 bytes
+-1.7 e 38 to 1.7 e 38  vs -3.4 e 308 to 3.4 e 308
+
+Boolean: 
+
+Based on virtual machine..size is not applicable. no range allowed values are EITHER TRUE OR FALSE
+
+EX: boolean b=true; 
+    boolean b=0;
+	boolean b=True cannot find symbol symbol variable True 
+	
+	
+Char: 
+Java char size is 2 bytes.
+old languages (like c/c++ ) are ascii code based and no of allowed ascii code characters are <=256 
+to represent these 256 chars 8 bits are enough, hence the size of char in old langugae is 1 byte. 
+and number of unicode chars >256 and < 65536
+
+Summary of primitive data types: 
+
+
+1. null for primitive is not applicable. null is default value for object reference 
+
+Literals: 
+
+a constant value which can be assigned to variable is called literal 
+ex: 
+ 
+ int x =10; 0-9
+ 
+ int - data type 
+ x - variable 
+ 10 contant value or literlas
+ 
+ Decimal literals:0-9 
+   int x=10;
+ octal form (base -8) (0-7)
+ hexa decimal form 
+ int x=010
+ allowed digits 0-9 
+ int x =0x10  a-f
+ 
+ Literals value should be prefixed with 0x 0X allowed 
+ 
+ ex: int x=10;
+     int x=0777;
+	 int x=0789; - not allowd - octal form (0-7)
+	 int x=0xface  - allowed 
+	 int x=0xbeef  - allowed- hexa allowed (0-9) and (a-f)
+	 int x=0xb
+	 
+ex; 
+
+ class test 
+ {
+   psvmain(string[]args)
+   {
+     int x= 10 ;
+	 int y=010;
+	 int z=0x10;
+	 
+	 system.out.println(x+ "...."+y+"..."+z);
+   }
+}
+
+
+output: 10...8...16
+
+By default every integral literal is of int type, but we can specify explicitly as long type by suffexed with l or L
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
