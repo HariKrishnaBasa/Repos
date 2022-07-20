@@ -1,0 +1,285 @@
+VAR- ARG METHODS(variable number of argument methods):
+
+Untill 1.4version we can't declare a method with variable number of arguments if there is a change in number of arguments 
+compulsory we should go for new method. it increases length of the code and reduces readability to over come this problem 
+sun people introduced var-arg methods in 1.5 version. According to this we can declare a method which can take variable no of 
+arguments such type of methods are var-arg methods. 
+we can declare var-arg as follows. 
+ex: m1(int...a)
+
+Case1: ... a , ...a not . ..a
+case2: we can mix var-arg with normal parameters 
+ex: m1(int x, int...y)
+case3: if we mix normal parameter with var-arg parameter then var-arg parameter should be last parameter. 
+ex: 
+m1(double...d,string s) ; invalid 
+case4: INside var-arg we can take only one var-arg parameter and we can't take more than one. 
+
+ex:m1(double...d,string...s) ; invalid 
+case4: Inside a class we can't declare var-arg method and corresponding one dimensional array method simultaneously otherwise will get compile time error.
+
+ex: 
+class test 
+{
+psv m1(int...x)
+{
+}
+psv m1(int[] x)
+{
+}
+}
+
+where ever one dimensional array present we can replace with var-arg parameter.
+
+m1(int[] x) = m1(int...x)
+
+where ever var-arg present we can replace with one-dimensional parameter.
+
+ex: m1(int...x)=m1(int[] x) --invalid
+
+Main Method:
+public static void main (string[] args)
+whether class contains main method or not. And whether main method is declared according to requirment or not. 
+These things wont checked by compiler. At run time jvm is responsible to check thease things. If jvm unable to find 
+main method , then we will get run time exception saying no such method error: main 
+
+EX: class Test 
+{
+  
+}
+error: can't find main(String[]) method in class: Test
+
+At run time jvm always searches for the main method with the following proto type
+
+public static void main (string[] args)
+
+public: to call from anywhere 
+
+static: with out existing objects also jvm has to call this method. 
+
+void: main () method won't return anything to jvm 
+
+main : This is the name which is configured inside JVM
+
+(String[] args) : command line arguments
+
+The above syntax is very strict and if we perform any change then we will get run time exception saying no such method error will come.
+
+Even though above syntax is very strict the following changes are acceptable.
+The order of modifier is not important. 
+
+1. static public 
+2. main(String[] args) string []args  , we can declare string array any acceptable form. 
+3. main(string[] hari)
+4. main(string...args);
+
+static final synchronized strictfp public main (string[] args)
+
+==>Overloading of main method is possible, but JVM will always string array args main method only. Other overloaded method we have to call explicitly like normal method call. 
+
+class test 
+
+psvmain(string[]args)
+{
+sop("string[]")
+}
+psvmain(int[] args)
+{
+  sop("int[]"
+}
+}
+
+case2: Inheritence concept applicable for main method hence while executing child class if child doesn't contain main method then parent class main method will be executed. 
+
+
+class p 
+
+psvmain(string[]args)
+{
+sop("string[]")
+}
+}
+class c extends p
+{
+}
+
+javac  p.java
+
+p.class   c.class
+
+java p 
+
+string[]
+
+java c 
+string[]
+
+Case3: it's a method hiding but not overriding , it's seems overriding concept applicable for main method but it's overriding and it's method hiding. 
+
+class p 
+
+psvmain(string[]args)
+{
+sop("Parent")
+}
+}
+class c extends p
+{
+psvmain(string[]args)
+{
+sop("child");
+}
+}
+
+javac  p.java
+
+p.class   c.class
+
+java p 
+Parent
+
+java c 
+Child
+
+Note: For main method inheritance and overloading concepts are applicable. But overriding concept not applicable. Instead of overriding method hiding is applicable.
+
+
+IN 1.7v if main method is not defined will get clear error as follows
+
+main method not found in class test please define public static void main(string[] args)
+
+COmmand line arguments:
+
+The arguments which are passing from command prompt are called command line argument. with these command line arguments JVM will create an array and by passing that array
+as argument jvm will call main method. 
+ex: java test.java a b c
+
+args[0]="a"
+args[1]="b"
+args[2]="c"
+
+The main objective of command line argument is we can customize behaviour of the main method.
+
+Case1: 
+
+class test 
+ psvmain(string[] args)
+    
+	for (i=0; i<=args.length;i++)    --if we replace <= with < we won't get any error. 
+	
+	  sop(args[i]);
+
+java test.java a b c = in this case will get error arrany index bounded 
+
+
+Java Coding standards: 
+
+
+when ever we are writing java code, it's highly recomended to follow coding standards. 
+when ever we are writing any component it's a name should reflect the purpose of the componant.(funcionality)
+
+THe main advantage of this approach is readability and maintainability of the code will be improved. 
+
+ex: class a
+    { 
+	  public int m1 (int x, int y)
+	  {
+	   return x+y;
+	  }
+	}
+--ameer peta standard.
+
+package com.durgasoft.scjp;
+
+public class calculator
+{ 
+  public static int add(x number1, x number2)
+  {
+    return number1+number2; 
+  }
+}
+
+Coding standards for classes: 
+
+Usually class names are nouns and should start with uppercase character and if contains multiple words every inner word should starts with uppercase character. 
+
+String 
+StringBuffer
+Account....
+
+Coding standards for Interface Names: 
+
+Usually Interface names are nouns and should start with uppercase character and if contains multiple words every inner word should starts with uppercase character.
+
+Runnable, Comparable, Serializable...
+
+COding standards for Methods: variables also same
+Should start with lower case character and if contains multiple words then every inner word should starts with uppercase character. it's verb-noun combination.
+Usually method names are either verbs or verb noun combination. 
+
+Coding standards for constants: 
+Usually constant names are nouns. should contain only upper case characters and if it contains multiple words then these words seperated with _ underscore symbol. 
+ex: MAX_VALUE, MAX_PRIORITY, PI---We can declare with public static final modifiers. 
+
+JavaBean coding standards: 
+
+a javabean  is a simple java class with private properties and public getter and setter methods.
+
+ex: public class StudentBean
+       
+	   private String Name 
+	   
+	   public void setName (string name)
+	   
+	       this.name=name;
+	   public string getName ()
+	       return name;
+
+Syntax of setter method: 
+1. It should be public method and return type should be void 
+2. method name should be prefixed set 
+3. it should take some argument i.e it should not be no argument method. 
+Syntax for getter method: 
+1. It should be public method and return type should not be void.
+2. method name should be prefixed get 
+3. it should ot take any argument.
+
+Boolean we have is method. 
+
+Listeners: 
+Case1: to register a listner. 
+
+method should be prefixed with add
+ex: publc void addMyActionLister(MyActionListner l)--should match MyActionListner
+
+case2: to unregister a listner. 
+method should be prefixed with remove
+ex: publc void removeMyActionLister(MyActionListner l)--should match MyActionListner
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

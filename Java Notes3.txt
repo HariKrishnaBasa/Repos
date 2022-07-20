@@ -1,0 +1,103 @@
+int x=10;
+long l=10l;
+int x=10l; compile time error; psl expect : long
+long l=10; --valid
+
+FLoating point Literals: 
+
+By default every floating point literal is of double type and hence we can't assign directly to the float variable . But we 
+can specify floating point literal as float type by suffexed with f or F. 
+ex: 
+  float f = 123.456;   ps l pre
+                       found : double 
+  float f=1234.456F;
+  
+  double d=123.456; 
+  
+  we can specify double explicitly for double.But it's not required. 
+  
+  ex: double d=123.456D;
+       float  f=123.456d; error: ps loss of prec
+	                       found : double.
+
+we can sepecify floating literals in decimal form only, can't specify in octal and hexa decimal forms. 
+ex: 
+
+  double d=123.456;  -valid
+  double d=0123.456;  - valid
+  double d=0x123.456  --not valid : malformed floating point literal 
+
+we can assign integral literal directly to floating point variables and that integral literal can be specified either in decimal or octal or hexadecimal forms
+
+ex; double d=0786 ;  --not valid 
+    double d=0xface;  -- valid
+	double d= 0786.0; --valid
+	double d=0xface.0 ; not valid
+	double d=10;   --valid
+	double d=0777; --valid 
+  
+ we can't assign floating point literals to integral types 
+ 
+ ex: double d=10;
+      int x=10.0; plp found : double required : int 
+we can specify floating point literal even in exponential form (scientific notation)
+ex; 
+     double d=1.2e3; --valid; 
+      sop(d);
+     float f=1.2e3; plp found: double required: float
+     float f=1.2e3F; --valid; 
+
+Boolean Literals: 
+
+The only allowed for boolean data type are true or false. 
+
+Char: 
+
+we can specify CHar literals as single character with in 'a'
+ex: char ch = 'a'; --valid 
+
+      char ch =a ;--not valid : cannot find variable , not a variable 
+	  char ch="a"; --not valid : incompatible found : string 
+	  char ch='ab';  --unclosed character 
+	  
+we can specify char literal as integral literal.which represents unicode value of the character. 
+and that integral literal can be specified either in decimal or octal or hexadecimal forms but allowed range is 0-65535
+ex: 
+   char ch = 65536; plp found int required char
+   char ch =0xface;
+    char ch = 0777;
+we can char literal in unicode representation. which is nothing but single quote back slash u '\uxxxx' - 4 digit hexa decimal number
+EVERY ESCAPTE CHAR IS VALID CHAR LITERAL 
+EX: char ch = '\n', '\t'
+    char ch ='\m' ==illegal escape char 
+	
+	escape chars: ntrbf \',\", \\ back slash= new line, tab, carriage return , backspace, form feed 
+   char ch = '\u0061';	
+String Literals: 
+
+ANy sequence of chars with in double quotes treated as strign literal.	
+ex:
+   string s ="Hari Krishna "
+   
+   
+   1.7version enhancement  with respect to literals 
+ 
+ For integral data types until 1.6 version we can specify literal value in the following ways.
+ 
+ 1. decimal form 2.octal form 3.hexa decimal form 
+ But 1.7 version onwards we can specify literal value even in binary form also. 
+ allowed digits are 0 and 1. 
+ LIteral value should be prefixed with 0b or 0B. 
+ ex: 
+ int x=0B1111; 
+ SOP(X); = 15
+ 
+ 
+ 8 BYTE LONG VALUE WE CAN ASSIGN 4 BYTE FLOAT VARIABLE BCOZ BOTH ARE FOLLOWING DIFFERENT MEMORY REPRESENTATION INTERANALLY.
+ EX: 
+ float f=10l;
+   a: 10.0;
+ 
+	 
+  
+						  

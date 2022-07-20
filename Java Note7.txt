@@ -1,0 +1,118 @@
+OPeratoer & assignments:
+
+1. Increment and decrement operators.
+2. arthimatic operators.
+3. String concatanation operators. 
+4. Relational operators.
+5. Equality operators.
+6. Instanceof operators.
+7. bitwise operator. 
+8. short circuit operator.
+9. type cast operator.
+10. assignment operator.
+11. conditional operator.
+12. new operator.
+13. [] operator.
+14. operator precedence
+15. Evaluation order of operands
+16. new vs newInstance()
+17. Instanceof vs Instance()
+18. ClassNotFoundException vs NoClassDefFoundError.
+
+
+
+1. Increment and decrement operators:
+
+y=++x; --pre-increment 
+y=x++; --Post increment
+
+y=--x; pre decrement
+y=x--; post decrement
+
+expression       intial value of x    value of y   final value of y
+
+y=++x          10               11              11
+y=x++          10				10 				11
+y=--x          10                9              9
+y=x--		   10                10             9
+
+ex: 
+int x=10;        char ch='a'            double d=10.5;      boolean b=true;
+x++;               ch++;                d++;                 b++;
+sop(x);  valid        sop(ch);  valid   sop(d); --valid      sop(b); --Invalid  --operator ++ cannot applied to boolean
+
+DIff b/w b++ and b=b+1:
+
+if you apply any arthimatic operator between two variables a and b , result type is always max(int, type of a , type of b)
+ex: 
+byte a =10
+byte b=20;
+byte c=a+b; max(int,byte,byte); --will get compile time error
+sop (c);
+
+byte c=(byte)(a+b); 
+sop(c) ;  ==30 --it's valid
+ex2: byte b=10;
+     b=b+1 ;  max(int,byte,int)--int 
+	 sop(b);  ce: possible loss precision
+	b=(byte)(b+1); ==valid
+	
+	b++ means (type of b)(b+1);
+	
+	but in the case of increment or decrement operator internally type casting performed automatically. 
+	
+Arthematic operators: 
+(+,-,*,/,%)
+if you apply any arthimatic operator between two variables a and b , result type is always max(int, type of a , type of b)
+
+byte --> short\ Int ---long-- float--double
+          char/
+
+byte+byte=int
+short+byte=int 
+short+short=int
+byte+long=long
+long+double=double
+float+long=float
+char+char=int
+char+double=double
+
+sop('a'+'b')
+ 97+98 = 195 
+ 
+ Infinity: In integral arthimatic(byte, short, int, long) there is no way represent infinity
+ Hence Infinity is the result. we will get arthimatic exception in integral arthimatic.
+ sop(10/0) RE: ae / by zero
+ 
+ But in floating point arthimatic(float,double) there is way to represent infinity. For these float and double classes contains
+ the following two constants. 
+ 1. POSITIVE_INFINITY
+ 2.NEGATIVE_INFINITY.
+ Hence even though result is infinity we won't get any arthimatic exception in floating point arthematic. 
+ sop(0.0/0)  ==NaN(not a number);
+ 
+ In integral arthematic int , byte,short there is no way to find the results , hence the result is defined will get run time exception saying arthematic exception / by zero
+ but there is way represent undefined results for these float and double classes contains NaN constant.
+ 
+ sop(0.0/0) ==NaN
+ sop(-0/0.0) ==NaN
+ 
+ Note: For any x value including NaN , the follwoing expression returns false.
+ 
+ x<Nan
+ x<=Nan
+ x>NaN
+ x>=NaN
+ x==NaN
+ For any x value including NaN , the follwoing expression returns true.
+ x!=NaN
+ Nan!=NaN
+ 
+sop(10<float.NaN);
+
+Arthematic Exception: 
+
+1. It is run time exception but not compile time error.
+2. BUt it is possible only in integral arthematic excp but not in floating point
+3. THe only operators which causes a.e are / %
+
