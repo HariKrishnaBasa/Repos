@@ -115,5 +115,3 @@ Arthematic Exception:
 1. It is run time exception but not compile time error.
 2. BUt it is possible only in integral arthematic excp but not in floating point
 3. THe only operators which causes a.e are / %
-
-It's Ended.
